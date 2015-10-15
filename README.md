@@ -17,7 +17,7 @@ Fechas de Entregas de Fases de la Tarea Programada:
 * Ejecución (6 de noviembre)
 * Manual Técnico (8 de noviembre)
 
-Contenidos de Repositorio
+Contenidos de Repositorio:
 
 * docs/ - Documentación del proyecto.
 * web/ - Sitio Web (HTML, CSS, JS, Angular.js).
