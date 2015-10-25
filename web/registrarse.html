@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="">
+	<title>Registrarse</title>
+	<head lang="es">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="CSS/index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="angular.min.js"></script>
+		<!--<script src="js/listaItemsApp.js"></script>-->
+	</head>
+	<style>
+	h2{
+	color: #6E6E6E;
+	}
+	</style>
+	<body ng-controller="itemsCtrl">
+		<!--Logo y botones de login-->
+		<div class="row row-padded">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<img src="logoLibreria.png" alt="Logo">
+				</div>
+				<div class="col-sm-8 text-right">
+					<br>
+					<button type="button" class="btn btn-link">Carrito</button>
+					|
+					<button type="button" class="btn btn-link">Ingresar</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		
+		<!-- Menú o navegador-->
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">Mnemonic</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+				  <li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Libros <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						  <li><a href="#">Ciencia Ficción</a></li>
+						  <li><a href="#">Historia</a></li>
+						  <li><a href="#">Biografías</a></li>
+						  <li><a href="#">Educación</a></li>
+						  <li><a href="#">Novela</a></li>
+					  </ul>
+				  </li>
+				<li><a href="#">Películas</a></li>
+				<li><a href="#">Comics</a></li>
+				<li><a href="#">Música</a></li>
+				<li><a href="#">Artículos varios</a></li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+					  <input type="text" ng-model="name" class="form-control" placeholder="Buscar">
+					</div>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+					
+				 </form>
+			  </ul>
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		<!--Inicio contenido de la página-->
+		<div class="container container-main">
+			<h1 align="center">Registra tu cuenta</h1>
+			<h2 color="gray">Datos Personales</h2>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="email">Nombre:</label>
+						<input class="form-control" id="nombre" placeholder="Nombre">
+					</div>
+					<div class="form-group">
+						<label for="email">Teléfono:</label>
+						<input class="form-control" id="telefono" placeholder="Número de telefono">
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="email">Primer apellido:</label>
+						<input class="form-control" id="apellido1" placeholder="Apellido">
+					</div>
+					<div class="form-group">
+						<label for="email">Correo electrónico:</label>
+						<input class="form-control" id="correo" placeholder="Correo electrónico">
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="email">Segundo apellido:</label>
+						<input class="form-control" id="apellido2" placeholder="Apellido">
+					</div>
+					<div class="form-group">
+						<label for="email">Dirección:</label>
+						<input class="form-control" id="direccion" placeholder="Dirección">
+					</div>
+				</div>
+			</div>
+			<hr>
+			<h2 subtitulo>Datos de cuenta</h2>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="nombreUsuario">Nombre de usuario:</label>
+						<input class="form-control" id="nombreUsuario" placeholder="Usuario">
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="Contraseña">Contraseña:</label>
+						<input class="form-control" type="password" id="contrasena" placeholder="Contraseña">
+					</div>
+				</div>
+			</div>	
+			<br>
+			<button type="submit" class="btn btn-default">Crear cuenta</button>
+			<br>
+			<br>
+		</div>
+	</body>
+</html>

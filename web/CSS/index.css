@@ -1,0 +1,44 @@
+.row-padded {
+background-color: #AFB0B1;
+width: 101.1%
+
+}
+body{
+background-color: #E6E6E6;
+}
+.subtitulo{
+color: #AFB0B1;
+}
+.navbar{
+width: 100%;
+margin-bottom: 0px;
+border-radius: 0px;
+}
+.container-main {
+background-color: #FFFFFF;
+}
+.btn-link{
+color: #636465;
+}
+.button-uno{
+background-color: #858585;
+}
+.button-dos{
+background-color: #AFB0B1
+}
+button.list-group-item{
+color:#434445;
+}
+.cuadro{
+border: 1px solid #ddd;
+border-radius: 4px;
+line-height: 1.42857143;
+padding-top: 2px;
+padding-bottom: 2px;
+padding-right: 1px;
+padding-left: 1px;
+margin-right: 20px;
+}		
+.col-items{
+width: 75%;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="listaItemsApp">
+	<title>Librería Mnemonic</title>
+	<head lang="es">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="CSS/index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="angular.min.js"></script>
+		<script src="js/listaItemsApp.js"></script>
+	</head>
+	<body ng-controller="itemsCtrl">
+		<!--Logo y botones de login-->
+		<div class="row row-padded">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<img src="logoLibreria.png" alt="Logo">
+				</div>
+				<div class="col-sm-8 text-right">
+					<br>
+					<button type="button" class="btn btn-link">Carrito</button>
+					|
+					<button type="button" class="btn btn-link">Ingresar</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		
+		<!-- Menú o navegador-->
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">Mnemonic</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+				  <li class="dropdown active">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Libros <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						  <li class="active"><a href="#">Ciencia Ficción</a></li>
+						  <li><a href="#">Historia</a></li>
+						  <li><a href="#">Biografías</a></li>
+						  <li><a href="#">Educación</a></li>
+						  <li><a href="#">Novela</a></li>
+					  </ul>
+				  </li>
+				<li><a href="#">Películas</a></li>
+				<li><a href="#">Comics</a></li>
+				<li><a href="#">Música</a></li>
+				<li><a href="#">Artículos varios</a></li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+					  <input type="text" ng-model="name" class="form-control" placeholder="Buscar">
+					</div>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+					
+				 </form>
+			  </ul>
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>	
+		<!--Inicio de contenido de página-->
+		<div class="container container-main">
+			<div class="row">
+				<div class="col-sm-3">
+					<h3>Subcategorías</h3>
+					<div class="list-group columna">
+						<button type="button" class="list-group-item button-uno">Ciencia Ficción</button>
+						<button type="button" class="list-group-item button-dos">Historia</button>
+						<button type="button" class="list-group-item button-uno">Biografías</button>
+						<button type="button" class="list-group-item button-dos">Educación</button>
+						<button type="button" class="list-group-item button-uno">Drama</button>
+					</div>
+				</div>
+				<div class="col-sm-8 col-items">
+					<h1>LIBROS<small>&nbsp&nbspCiencia Ficción</small></h1>
+					<hr>
+					<!--Lista de items-->
+					
+					<div class="row" ng-repeat="x in libros">
+						<div ng-if="$even">
+							<div class="col-sm-5 cuadro">
+								<div class="col-sm-5">
+									<div class="thumbnail">
+										<img src="yorobot.jpg" alt="...">
+									</div>
+								</div>
+								<div class="col-sm-7">
+									<div class="caption">
+										<h4>{{x.titulo}}</h4>
+										<p>{{"Autor: "+x.autor}}<br>{{"Editorial: "+x.editorial}}<br>{{"Tema: "+x.tema}}</p>
+										<p>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										</p>
+										<p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Ver</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-5 cuadro" ng-if="$index < libros.length-1">
+								<div class="col-sm-5">
+									<div class="thumbnail">
+										<img src="yorobot.jpg" alt="...">
+									</div>
+								</div>
+								<div class="col-sm-7" ng-controller="itemsCtrl" ng-init="numCuadro=2">
+									<div class="caption">
+										<h4>{{libros[$index+1].titulo}}</h4>
+										<p>{{"Autor: "+libros[$index+1].autor}}<br>{{"Editorial: "+libros[$index+1].editorial}}<br>{{"Tema: "+libros[$index+1].tema}}</p>
+										<p>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										</p>
+										<p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Ver</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>		
+	</body>
+</html>
