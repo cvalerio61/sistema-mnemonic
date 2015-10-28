@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="mnemonic">
-	<title>Registrarse</title>
+	<title>Iniciar sesión</title>
 	<head lang="es">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -9,15 +9,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="angular.min.js"></script>
+		<script src="angular-cookies.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/registrarseApp.js"></script>
+		<script src="js/loginApp.js"></script>
+		<!--<script src="js/sesionFactory.js"></script>-->
 	</head>
 	<style>
-	h2{
-	color: #6E6E6E;
-	}
+		h1{
+		color: #6E6E6E;
+		}
 	</style>
-	<body>
+	<body ng-controller="cargarSesion">
 		<!--Logo y botones de login-->
 		<div class="row row-padded">
 		<div class="container">
@@ -34,7 +36,6 @@
 			</div>
 		</div>
 		</div>
-		
 		
 		<!-- Menú o navegador-->
 		<nav class="navbar navbar-inverse" role="navigation">
@@ -81,63 +82,31 @@
 			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
-		</nav>
-		<!--Inicio contenido de la página-->
-		<div class="container container-main" ng-controller="registrarse">
-			<h1 align="center">Registra tu cuenta</h1>
-			<h2 color="gray">Datos Personales</h2>
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="form-group">
-						<label for="email">Nombre:</label>
-						<input class="form-control" id="nombre" placeholder="Nombre" ng-model="nombre">
-					</div>
-					<div class="form-group">
-						<label for="email">Teléfono:</label>
-						<input class="form-control" id="telefono" placeholder="Número de telefono" ng-model="telefono">
-					</div>
+		</nav>	
+		<!-- Inicio de contenido de la página -->
+		<div class="container container-main">
+			<div class="col-sm-5">
+				<h1>Inicia sesión</h1>
+				<div class="form-group">
+					<label for="nombreUsuario">Nombre de usuario:</label>
+					<input class="form-control" id="nombreUsuario" placeholder="Usuario" ng-model="nombreUsuario">
 				</div>
-				<div class="col-sm-3">
-					<div class="form-group">
-						<label for="email">Primer apellido:</label>
-						<input class="form-control" id="apellido1" placeholder="Apellido" ng-model="apellido1">
-					</div>
-					<div class="form-group">
-						<label for="email">Correo electrónico:</label>
-						<input class="form-control" id="correo" placeholder="Correo electrónico" ng-model="correo">
-					</div>
+				<div class="form-group">
+					<label for="Contraseña">Contraseña:</label>
+					<input class="form-control" type="password" id="contrasena" placeholder="Contraseña" ng-model="contrasena">
 				</div>
-				<div class="col-sm-3">
-					<div class="form-group">
-						<label for="email">Segundo apellido:</label>
-						<input class="form-control" id="apellido2" placeholder="Apellido" ng-model="apellido2">
-					</div>
-					<div class="form-group">
-						<label for="email">Dirección:</label>
-						<input class="form-control" id="direccion" placeholder="Dirección" ng-model="direccion">
-					</div>
-				</div>
+				
+				<button type="submit" class="btn btn-default" ng-click="realizarLogin()">Iniciar sesión</button>
 			</div>
-			<hr>
-			<h2 subtitulo>Datos de cuenta</h2>
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="form-group">
-						<label for="nombreUsuario">Nombre de usuario:</label>
-						<input class="form-control" id="nombreUsuario" placeholder="Usuario" ng-model="nombreUsuario">
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="form-group">
-						<label for="Contraseña">Contraseña:</label>
-						<input class="form-control" type="password" id="contrasena" placeholder="Contraseña" ng-model="contrasena">
-					</div>
-				</div>
-			</div>	
-			<br>
-			<button type="submit" class="btn btn-default" ng-click="registrarCuenta()">Crear cuenta</button>
-			<br>
-			<br>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-5">
+				<h1>Registrate</h1>
+				<p>No posees una cuenta en la Librería Mnemonic? Regístrate, es gratis!</p>
+				<button type="submit" class="btn btn-default" ng-click="registrarCuenta()">Registrarse</button>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			
 		</div>
+	{{cuentaUsuario}}
 	</body>
 </html>

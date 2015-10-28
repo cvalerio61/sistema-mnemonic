@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="listaItemsApp">
+<html lang="es" ng-app="mnemonic">
 	<title>Librería Mnemonic</title>
 	<head lang="es">
 		<meta charset="utf-8">
@@ -9,11 +9,15 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="angular.min.js"></script>
+		<script src="angular-cookies.js"></script>
+		<script src="js/app.js"></script>
 		<script src="js/listaItemsApp.js"></script>
+		<script src="js/sesionController.js"></script>
+		<!--<script src="js/sesionFactory.js"></script>-->
 	</head>
-	<body ng-controller="itemsCtrl">
+	<body>
 		<!--Logo y botones de login-->
-		<div class="row row-padded">
+		<div class="row row-padded" ng-controller="sesionCtrl">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
@@ -21,9 +25,11 @@
 				</div>
 				<div class="col-sm-8 text-right">
 					<br>
-					<button type="button" class="btn btn-link">Carrito</button>
+					<a href="">Carrito</a>
 					|
-					<button type="button" class="btn btn-link">Ingresar</button>
+					<a href={{cuenta.href}}>{{cuenta.nombreUsuario}}</a>
+					|
+					<a ng-hide="cerrarSesionVisible" href="" ng-click="cerrarSesion()">Cerrar Sesión</a>
 				</div>
 			</div>
 		</div>
@@ -77,7 +83,7 @@
 		  </div><!-- /.container-fluid -->
 		</nav>	
 		<!--Inicio de contenido de página-->
-		<div class="container container-main">
+		<div class="container container-main" ng-controller="itemsCtrl">
 			<div class="row">
 				<div class="col-sm-3">
 					<h3>Subcategorías</h3>
@@ -145,5 +151,6 @@
 				</div>
 			</div>
 		</div>		
+		{{usuario}}
 	</body>
 </html>
